@@ -1,0 +1,6 @@
+.env
+tmp
+tailwindcss
+**/*_templ.go
+static/css/style.css
+db/app.db

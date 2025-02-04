@@ -1,0 +1,25 @@
+package layout
+
+// import "app/internal/view/component"
+
+templ background() {
+	<div class="fixed inset-0 pointer-events-none">
+		<div class="absolute top-0 -left-4 w-72 h-72 bg-violet-500/30 rounded-full blur-[100px]" />
+		<div class="absolute bottom-0 -right-4 w-72 h-72 bg-indigo-500/30 rounded-full blur-[100px]" />
+		<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]" />
+	</div>
+}
+
+templ Page(title string) {
+    @Layout(title) {
+        <div class="min-h-screen bg-[#030712] flex relative overflow-hidden">
+            @background()
+            // @component.Sidebar()
+            // @component.Navbar()
+            <main class="flex-1 min-w-0 relative">
+                // @component.Header()
+                { children... }
+            </main>
+        </div>
+    }
+}
