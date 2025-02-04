@@ -1,6 +1,6 @@
 package layout
 
-// import "app/internal/view/component"
+import "app/internal/view/component"
 
 templ background() {
 	<div class="fixed inset-0 pointer-events-none">
@@ -14,10 +14,10 @@ templ Page(title string) {
     @Layout(title) {
         <div class="min-h-screen bg-[#030712] flex relative overflow-hidden">
             @background()
-            // @component.Sidebar()
+            @component.Sidebar()
             // @component.Navbar()
             <main class="flex-1 min-w-0 relative">
-                // @component.Header()
+                @component.Header()
                 { children... }
             </main>
         </div>

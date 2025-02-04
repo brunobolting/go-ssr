@@ -28,7 +28,8 @@ func NewHttpHandler(r *chi.Mux) http.Handler {
 	r.Get("/static/*", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))).ServeHTTP)
 
 	r.Get("/", Make(HomePage))
-
+	r.Get("/login", Make(LoginPage))
+	r.Get("/dashboard", Make(DashboardPage))
 
 	return r
 }
