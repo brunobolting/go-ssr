@@ -1,0 +1,13 @@
+package component
+
+templ ErrorUserAlreadyExists() {
+    <div class="bg-red-500 text-white p-4 rounded">
+        <p class="text-center">User already exists</p>
+    </div>
+}
+
+templ Error(message string) {
+    <div class="bg-red-500 text-white p-4 rounded">
+        <p class="text-center">{message}</p>
+    </div>
+}

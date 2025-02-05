@@ -1,10 +1,10 @@
 package page
 
 import "app/internal/view/layout"
-import "app/internal/view/component"
+import "app/internal/view/component/user"
 
-templ Login(values component.LoginFormValues, errors string) {
-    @layout.Layout("Login") {
+templ CreateUser(values component_user.CreateUserFormValues, errors component_user.CreateUserFormErrors) {
+    @layout.Layout("Create User") {
         <div class="min-h-screen bg-zinc-950 flex items-center justify-center p-4 relative overflow-hidden">
             <div class="absolute inset-0">
                 <div
@@ -22,7 +22,7 @@ templ Login(values component.LoginFormValues, errors string) {
             </div>
 
             <div class="relative w-full max-w-sm transition-all duration-700 opacity-100 translate-y-0">
-                @component.LoginForm(values, errors)
+                @component_user.CreateUserForm(values, errors)
             </div>
         </div>
     }

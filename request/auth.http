@@ -1,0 +1,5 @@
+### login
+POST http://localhost:8080/login
+Content-Type: application/x-www-form-urlencoded
+
+username=bruno&password=123456

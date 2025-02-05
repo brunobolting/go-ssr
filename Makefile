@@ -52,9 +52,11 @@ watch: ## build and watch the project and tailwindcss
 db/create: ## create sqlite database
 	@touch db/app.db
 
-.PHONY: migration/reset
-migration/reset: ## reset sqlite database
-	@GOOSE_DRIVER=sqlite3 GOOSE_DBSTRING=db/app.db goose -dir=./db/migrations reset
+.PHONY: db/reset
+db/reset: ## reset sqlite database
+	@rm db/app.db
+	@touch db/app.db
+	@GOOSE_DRIVER=sqlite3 GOOSE_DBSTRING=db/app.db goose -dir=./db/migrations up
 
 .PHONY: migration/install
 migration/install: ## install goose migration tool
